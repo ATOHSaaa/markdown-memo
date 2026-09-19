@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP",
+    ui-sans-serif, system-ui, sans-serif;
+  --color-paper: var(--paper);
+  --color-sidebar: var(--sidebar);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-border: var(--border);
+  --color-panel: var(--panel);
+  --color-code: var(--code);
+}
+
+:root {
+  --paper: #f4efe6;
+  --sidebar: #ebe4d6;
+  --ink: #1c1712;
+  --muted: #7a7166;
+  --accent: #c45c26;
+  --border: #d9d0c2;
+  --panel: #fbf8f2;
+  --code: #efe8dc;
+  --app-height: 100dvh;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #16130f;
+    --sidebar: #12100d;
+    --ink: #f4eee6;
+    --muted: #a3988c;
+    --accent: #e08a4f;
+    --border: #2c2721;
+    --panel: #1b1814;
+    --code: #24201b;
+  }
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+html {
+  height: var(--app-height);
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--paper);
+  color: var(--ink);
+  overscroll-behavior: none;
+}
+
+#root {
+  width: 100%;
+  max-width: none;
+  text-align: initial;
+  border: none;
+}
+
+.tiptap {
+  min-height: 100%;
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 8rem;
+  font-size: 17px;
+  line-height: 1.85;
+  outline: none;
+}
+
+@media (min-width: 768px) {
+  .tiptap {
+    padding: 2.5rem 2rem 10rem;
+  }
+}
+
+.tiptap h1 {
+  margin: 1.6rem 0 0.8rem;
+  font-size: 2rem;
+  font-weight: 650;
+  letter-spacing: -0.03em;
+  line-height: 1.25;
+}
+
+.tiptap h2 {
+  margin: 1.4rem 0 0.7rem;
+  font-size: 1.45rem;
+  font-weight: 650;
+  line-height: 1.3;
+}
+
+.tiptap h3 {
+  margin: 1.2rem 0 0.5rem;
+  font-size: 1.15rem;
+  font-weight: 650;
+}
+
+.tiptap p {
+  margin: 0.35rem 0;
+}
+
+.tiptap ul {
+  margin: 0.6rem 0;
+  padding-left: 1.4rem;
+  list-style: disc;
+}
+
+.tiptap ol {
+  margin: 0.6rem 0;
+  padding-left: 1.4rem;
+  list-style: decimal;
+}
+
+.tiptap li {
+  margin: 0.15rem 0;
+}
+
+.tiptap blockquote {
+  margin: 1rem 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--accent);
+  color: var(--muted);
+}
+
+.tiptap pre {
+  margin: 1rem 0;
+  overflow-x: auto;
+  border-radius: 0.75rem;
+  background: var(--code);
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+.tiptap code {
+  border-radius: 0.3rem;
+  background: var(--code);
+  padding: 0.1rem 0.3rem;
+  font-size: 0.9em;
+}
+
+.tiptap pre code {
+  background: transparent;
+  padding: 0;
+}
+
+.tiptap a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.tiptap hr {
+  margin: 2rem 0;
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+.tiptap img {
+  margin: 1rem 0;
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+}
+
+.tiptap p.is-editor-empty:first-child::before {
+  color: var(--muted);
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}

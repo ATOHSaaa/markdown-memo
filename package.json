@@ -1,0 +1,45 @@
+{
+  "name": "markdown",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "deploy": "npm run build && wrangler deploy",
+    "db:migrate": "wrangler d1 migrations apply markdown-notes --local",
+    "db:migrate:remote": "wrangler d1 migrations apply markdown-notes --remote",
+    "cf-typegen": "wrangler types"
+  },
+  "dependencies": {
+    "@tiptap/extension-image": "^3.31.3",
+    "@tiptap/extension-link": "^3.31.3",
+    "@tiptap/extension-placeholder": "^3.31.3",
+    "@tiptap/pm": "^3.31.3",
+    "@tiptap/react": "^3.31.3",
+    "@tiptap/starter-kit": "^3.31.3",
+    "hono": "^4.13.8",
+    "marked": "^18.0.13",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-router-dom": "^7.18.4",
+    "turndown": "^7.2.4"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.56.0",
+    "@cloudflare/workers-types": "^5.20260919.1",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@types/turndown": "^5.0.6",
+    "@vitejs/plugin-react": "^6.1.1",
+    "oxlint": "^1.81.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0",
+    "wrangler": "^4.135.0"
+  }
+}
