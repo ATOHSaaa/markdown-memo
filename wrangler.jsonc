@@ -11,7 +11,7 @@
     {
       "binding": "DB",
       "database_name": "markdown-notes",
-      "database_id": "00000000-0000-0000-0000-000000000001",
+      "database_id": "7431307d-91e4-4c9d-87ba-e1f2d340eeb5",
       "migrations_dir": "migrations"
     }
   ],
